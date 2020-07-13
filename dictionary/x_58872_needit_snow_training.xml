@@ -2,5 +2,7 @@
     <element label="snow training" max_length="40" name="x_58872_needit_snow_training" type="collection">
         <element label="First Name" max_length="15" name="first_name" type="string"/>
         <element label="Last Name" max_length="15" name="last_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Address" mandatory="true" max_length="40" name="u_address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Telephone" mandatory="true" max_length="40" name="u_contact" type="string"/>
     </element>
 </database>

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="0e6623102f8a5010ce95d2172799b67f" sys_domain="global" table="x_58872_needit_snow_training" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.begin_split</element>
+            <element>first_name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-07-13 04:40:20</sys_created_on>
-            <sys_id>566623102f8a5010ce95d2172799b686</sys_id>
+            <sys_created_on>2020-07-13 05:37:51</sys_created_on>
+            <sys_id>7893ffd42f8a5010ce95d2172799b632</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_58872_needit_snow_training" sys_domain="global" view="Default view">0e6623102f8a5010ce95d2172799b67f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-07-13 04:40:20</sys_updated_on>
+            <sys_updated_on>2020-07-13 05:37:51</sys_updated_on>
             <sys_user/>
-            <type>.begin_split</type>
+            <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>first_name</element>
+            <element>u_contact</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-07-13 04:40:20</sys_created_on>
-            <sys_id>5e6623102f8a5010ce95d2172799b686</sys_id>
+            <sys_created_on>2020-07-13 05:37:51</sys_created_on>
+            <sys_id>f893ffd42f8a5010ce95d2172799b632</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_58872_needit_snow_training" sys_domain="global" view="Default view">0e6623102f8a5010ce95d2172799b67f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-07-13 04:40:20</sys_updated_on>
+            <sys_updated_on>2020-07-13 05:37:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>.split</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-07-13 04:40:20</sys_created_on>
-            <sys_id>de6623102f8a5010ce95d2172799b686</sys_id>
+            <sys_created_on>2020-07-13 05:37:51</sys_created_on>
+            <sys_id>7c93ffd42f8a5010ce95d2172799b632</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_58872_needit_snow_training" sys_domain="global" view="Default view">0e6623102f8a5010ce95d2172799b67f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-07-13 04:40:20</sys_updated_on>
+            <sys_updated_on>2020-07-13 05:37:51</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -46,29 +46,29 @@
             <element>last_name</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-07-13 04:40:20</sys_created_on>
-            <sys_id>526623102f8a5010ce95d2172799b687</sys_id>
+            <sys_created_on>2020-07-13 05:37:51</sys_created_on>
+            <sys_id>b493ffd42f8a5010ce95d2172799b63f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_58872_needit_snow_training" sys_domain="global" view="Default view">0e6623102f8a5010ce95d2172799b67f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-07-13 04:40:20</sys_updated_on>
+            <sys_updated_on>2020-07-13 05:37:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.end_split</element>
+            <element>u_address</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-07-13 04:40:20</sys_created_on>
-            <sys_id>d26623102f8a5010ce95d2172799b687</sys_id>
+            <sys_created_on>2020-07-13 05:37:51</sys_created_on>
+            <sys_id>3893ffd42f8a5010ce95d2172799b63f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_58872_needit_snow_training" sys_domain="global" view="Default view">0e6623102f8a5010ce95d2172799b67f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-07-13 04:40:20</sys_updated_on>
+            <sys_updated_on>2020-07-13 05:37:51</sys_updated_on>
             <sys_user/>
-            <type>.end_split</type>
+            <type/>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>

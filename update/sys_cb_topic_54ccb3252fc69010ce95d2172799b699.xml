@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category display_value="ITSM IT Issues">140e2eda0b203300a1b16c2367673af4</category>
+        <connect_queue/>
+        <description>Chat Support</description>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.16",
+  "goals": {
+    "420093e8ceb442a792d7b221a54830fa": {
+      "id": "420093e8ceb442a792d7b221a54830fa",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "715f74714a4c40db8eeacb0936080b77": {
+          "id": "715f74714a4c40db8eeacb0936080b77",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "Thank you for Chatting NeedIt Support. {{vaInputs.user.first_name}}",
+            "mode": "simple"
+          }
+        },
+        "6ae5675cae0b4dbb90fa4ccf7be07d3b": {
+          "id": "6ae5675cae0b4dbb90fa4ccf7be07d3b",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "Thank you for Chatting NeedIt Support.  Have a great day ahead. ",
+            "mode": "simple"
+          }
+        },
+        "a19f8af770a54c80b9fae2347f5856e9": {
+          "stepType": "ChoicePrompt",
+          "name": "NeedIt Type",
+          "prompt": {
+            "value": "Which type of NeedIt record would you like to view?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "867700aa21b849d5901b24dbd30ffcc8",
+          "id": "a19f8af770a54c80b9fae2347f5856e9",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "entity": ""
+        },
+        "6847eeebd4a044caacd43f2194198cd7": {
+          "id": "6847eeebd4a044caacd43f2194198cd7",
+          "stepType": "LookupRecord",
+          "name": "Search for Tickets",
+          "condition": {
+            "mode": "glide_query",
+            "value": "u_request_type={{vaInputs.needit_type}}^state!=3^u_requested_for={{vaInputs.user}}"
+          },
+          "applicability": {
+            "value": "needit_type=Legal^ORneedit_type=Facilities^ORneedit_type=Human Resources",
+            "mode": "query"
+          },
+          "variableId": "c2f38c162c974e479af780cbfdc92d3c"
+        },
+        "5b959b0c11344467806965de1457a90b": {
+          "id": "5b959b0c11344467806965de1457a90b",
+          "stepType": "RecordOutput",
+          "name": "Show Infomration",
+          "variableId": "c2f38c162c974e479af780cbfdc92d3c",
+          "mode": "variable",
+          "tableName": "x_58872_needit_needit",
+          "fields": [
+            "state",
+            "priority",
+            "number"
+          ],
+          "applicability": {
+            "mode": "query",
+            "value": ""
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "f0d8b7ffeaca44a9b646503d154ef7e3": {
+          "id": "f0d8b7ffeaca44a9b646503d154ef7e3",
+          "stepType": "Prompt",
+          "name": "Cofirm NeedIt Type",
+          "prompt": {
+            "value": "Do you want to proceed {{vaInputs.needit_type}} ?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "Check it now...",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "entity": "",
+          "variableId": "60ad44ee97094574bba862e7979129f3"
+        },
+        "577f412ad75a4e7290a4a8737e8ac62f": {
+          "id": "577f412ad75a4e7290a4a8737e8ac62f",
+          "stepType": "Decision",
+          "name": "Decision"
+        }
+      },
+      "edges": [
+        {
+          "id": "e25cbb739ce74cf1a1ef5301cc769f3c",
+          "edgeType": "Edge",
+          "source": "6847eeebd4a044caacd43f2194198cd7",
+          "target": "5b959b0c11344467806965de1457a90b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cab3759a64364fabbd1125016667a34b",
+          "edgeType": "Edge",
+          "source": "a19f8af770a54c80b9fae2347f5856e9",
+          "target": "f0d8b7ffeaca44a9b646503d154ef7e3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "82bcc254b43f4bccb2c58c04c515e031",
+          "edgeType": "Edge",
+          "source": "715f74714a4c40db8eeacb0936080b77",
+          "target": "a19f8af770a54c80b9fae2347f5856e9",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "525a9cbe63774f3286309bf9a7ff5fb7",
+          "edgeType": "Edge",
+          "source": "5b959b0c11344467806965de1457a90b",
+          "target": "6ae5675cae0b4dbb90fa4ccf7be07d3b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2e6a1b5e918c45e9af5c5158ade0422a",
+          "edgeType": "Edge",
+          "source": "f0d8b7ffeaca44a9b646503d154ef7e3",
+          "target": "577f412ad75a4e7290a4a8737e8ac62f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "204de16929914e029269382cfd506d2e",
+          "edgeType": "Branch",
+          "source": "577f412ad75a4e7290a4a8737e8ac62f",
+          "target": "6847eeebd4a044caacd43f2194198cd7",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "cofirm_needit_type=true",
+            "mode": "query"
+          },
+          "label": "Always Yes"
+        },
+        {
+          "id": "4b8f587f00324f78bd003bbd34e14668",
+          "edgeType": "Branch",
+          "source": "577f412ad75a4e7290a4a8737e8ac62f",
+          "target": "6ae5675cae0b4dbb90fa4ccf7be07d3b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "cofirm_needit_type=",
+            "mode": "query"
+          },
+          "label": "Always No"
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "867700aa21b849d5901b24dbd30ffcc8": {
+      "id": "867700aa21b849d5901b24dbd30ffcc8",
+      "name": "needit_type",
+      "label": "NeedIt Type",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Legal",
+          "value": "Legal"
+        },
+        {
+          "label": "facilities",
+          "value": "Facilities",
+          "checked": true
+        },
+        {
+          "label": "Human Resources",
+          "value": "Human Resources",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "c2f38c162c974e479af780cbfdc92d3c": {
+      "id": "c2f38c162c974e479af780cbfdc92d3c",
+      "name": "search_for_tickets",
+      "label": "Search For Tickets",
+      "varType": "reference",
+      "table": "x_58872_needit_needit",
+      "category": "vaInputs"
+    },
+    "60ad44ee97094574bba862e7979129f3": {
+      "id": "60ad44ee97094574bba862e7979129f3",
+      "name": "cofirm_needit_type",
+      "label": "Cofirm NeedIt Type",
+      "varType": "boolean",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>NeedIt Support,Inquiry,Help,Issue</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>NeedIt Support</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-17 03:30:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>54ccb3252fc69010ce95d2172799b699</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>NeedIt Support</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_54ccb3252fc69010ce95d2172799b699</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-17 06:34:26</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=54ccb3252fc69010ce95d2172799b699"/>
+</record_update>
